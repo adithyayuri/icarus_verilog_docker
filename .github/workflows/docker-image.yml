@@ -22,7 +22,7 @@ jobs:
       env:
         DOCKER_IMAGE_NAME: 'adithya.yuri/icarus_verilog:${GITHUB_REF#refs/*/}'
       run: |
-        docker build -t ${{ env.DOCKER_IMAGE_NAME }} -arg BUILD_DATE=$(date +'%Y-%m-%dT%H:%M:%S') .
+        docker build -t ${{ env.DOCKER_IMAGE_NAME }} --build-arg BUILD_DATE=$(date +'%Y-%m-%dT%H:%M:%S') .
         
     - name: Docker Login
       run: |
