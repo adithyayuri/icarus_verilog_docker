@@ -1,2 +1,2 @@
-# icarus_verilog_docker
+# Docker image for Icarus verilog
 Icarus docker image repository
