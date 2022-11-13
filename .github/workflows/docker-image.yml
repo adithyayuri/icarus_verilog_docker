@@ -8,7 +8,7 @@ on:
 env:
   DOCKER_USER: ${{ secrets.DOCKER_HUB_ID }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
-  DOCKER_IMAGE_NAME: 'adithya.yuri/icarus_verilog:${GITHUB_REF#refs/*/}'
+  DOCKER_IMAGE_NAME: 'adithyayuri/icarus_verilog:${GITHUB_REF#refs/*/}'
 
 jobs:
   build:
