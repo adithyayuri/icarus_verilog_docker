@@ -1,0 +1,28 @@
+name: Build Icarus Verilog docker image and upload to DockerHub
+
+on:
+  push:
+    tags:
+      - '*'  
+      
+env:
+  DOCKER_USER: ${{ secrets.DOCKER_HUB_ID }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repo
+      uses: actions/checkout@v3
+
+    - name: Get tag name
+      id: tag_name
+      run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+    
+    - name: Build the image
+      env:
+        DOCKER_IMAGE_NAME: '${{ env.DOCKER_USER }}/icarus_verilog:${{ steps.vars.outputs.tag }}'
+      run: echo ${{ env.DOCKER_IMAGE_NAME }}
