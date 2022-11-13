@@ -45,4 +45,3 @@ LABEL com.dockerfile.build_date=$BUILD_DATE
 LABEL com.dockerfile.repo="https://github.com/adithyayuri/verilog-snippets"
 LABEL com.dockerfile.base_image="Ubuntu 22.04"
 LABEL com.dockerfile.icarus_url=$IVERILOG_REPO_URL
-LABEL com.dockerfile.icarus_commit=$ICARUS_COMMIT_ID
